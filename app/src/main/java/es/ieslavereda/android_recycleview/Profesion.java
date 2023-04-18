@@ -4,9 +4,10 @@ public class Profesion {
     private int img;
     private String nombre;
 
-    public Profesion(int img, String nombre){
-        this.img = img;
+
+    public Profesion(String nombre, int img){
         this.nombre = nombre;
+        this.img = img;
     }
 
     public int getImg() {
