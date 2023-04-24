@@ -15,7 +15,7 @@ import java.util.List;
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
 
     private UsuarioRepository listaUsuarios; //Lista de usuarios a mostrar
-    private List<Usuario> usuarios;
+//    private List<Usuario> usuarios;
     private final LayoutInflater inflater;
 
     public MyRecyclerViewAdapter(Context context) {
@@ -23,10 +23,10 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
-    public MyRecyclerViewAdapter(Context context, List<Usuario> usuarios) {
-        this(context);
-        this.usuarios = usuarios;
-    }
+//    public MyRecyclerViewAdapter(Context context, List<Usuario> usuarios) {
+//        this(context);
+//        this.usuarios = usuarios;
+//    }
 
     // Creamos el ViewHolder con la vista de un elemento sin personalizar
     @NonNull
