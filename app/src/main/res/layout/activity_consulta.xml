@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/oficioImagen"
+        android:layout_width="219dp"
+        android:layout_height="189dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25"
+        app:srcCompat="@drawable/ic_actor_background" />
+
+    <TextView
+        android:id="@+id/nombreTV"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="nombre"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/oficioImagen"
+        app:layout_constraintStart_toStartOf="@+id/oficioImagen"
+        app:layout_constraintTop_toBottomOf="@+id/oficioImagen" />
+
+    <TextView
+        android:id="@+id/oficioTV"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="oficio"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/nombreTV"
+        app:layout_constraintStart_toStartOf="@+id/nombreTV"
+        app:layout_constraintTop_toBottomOf="@+id/nombreTV" />
+
+    <Button
+        android:id="@+id/volverButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:text="Volver"
+        app:layout_constraintEnd_toEndOf="@+id/oficioTV"
+        app:layout_constraintStart_toStartOf="@+id/oficioTV"
+        app:layout_constraintTop_toBottomOf="@+id/oficioTV" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,7 +19,11 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
-public class MainActivity extends AppCompatActivity {
+import java.io.Serializable;
+import java.util.List;
+
+//implementamos OnClickListener para el ViewHolder
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private RecyclerView recyclerView;
     private FloatingActionButton addUser;
@@ -36,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
         switchSort = findViewById(R.id.switchSort);
 
         MyRecyclerViewAdapter myRecyclerViewAdapter = new MyRecyclerViewAdapter(this);
+        //llamamos al setter del listener
+        myRecyclerViewAdapter.setOnClickListener(this);
         recyclerView.setAdapter(myRecyclerViewAdapter);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
@@ -106,5 +112,14 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, FormularioActivity.class);
             activityResultLauncher.launch(intent);
         });
+    }
+
+
+    @Override
+    public void onClick(View view) {
+        Usuario usuario = UsuarioRepository.getInstance().get(recyclerView.getChildAdapterPosition(view));
+        Intent intent = new Intent(this, ConsultaActivity.class);
+        intent.putExtra("usuario", usuario);
+        startActivity(intent);
     }
 }

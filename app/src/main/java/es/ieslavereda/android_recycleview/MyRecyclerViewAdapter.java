@@ -17,6 +17,8 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     private UsuarioRepository listaUsuarios; //Lista de usuarios a mostrar
 //    private List<Usuario> usuarios;
     private final LayoutInflater inflater;
+    //Preparamos el viewholder para que sea clicable
+    private View.OnClickListener onClickListener;
 
     public MyRecyclerViewAdapter(Context context) {
         listaUsuarios = UsuarioRepository.getInstance();
@@ -34,6 +36,8 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // Inflamos la vista desde el xml
         View view = inflater.inflate(R.layout.simple_element, parent, false);
+        //ponemos el listener para que sea clicable
+        view.setOnClickListener(onClickListener);
         return new ViewHolder(view);
     }
 
@@ -66,6 +70,11 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             profesion = itemView.findViewById(R.id.textViewOficio);
             imagen = itemView.findViewById(R.id.imageView);
         }
+    }
+
+    //setter del atributo onClickListener
+    public void setOnClickListener(View.OnClickListener onClickListener){
+        this.onClickListener = onClickListener;
     }
 
 }
